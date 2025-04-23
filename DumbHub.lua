@@ -89,7 +89,7 @@ Main.BackgroundColor3 = Color3.fromRGB(43, 46, 48)
 Main.BackgroundTransparency = 0.300
 Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.550051212, 0, 0.447744071, 0)
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
 Main.Size = UDim2.new(0, 525, 0, 400)
 
 
