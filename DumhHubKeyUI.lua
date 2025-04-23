@@ -4,21 +4,6 @@ local Key = "PumpkinPie"
 
 
 
-
-
-
-
-local GameID = {
-	--Bee Swarm Simualtor
-	1537690962,
-	--Anime Rarites
-	16778527574
-
-}
-
-
-
-
 local ID = {
 
 	-- DumbHubOwner 
@@ -382,53 +367,28 @@ ConfirmButtonUICorner.Name = "ConfirmButtonUICorner"
 ConfirmButtonUICorner.Parent = ConfirmButton
 
 
-
 ConfirmButton.MouseButton1Click:Connect(function()
-    if TextBox.Text == Key then
-        CheckingKeyText.Visible = true
-        CheckingKeyText.Text = "> Checking Key.. 1/3"
-        wait(1)
-        CheckingKeyText.Text = "> Checking Key.. 2/3"
-        wait(1)
-        CheckingKeyText.Text = "> Checking Key.. 3/3"
-        wait(1)
-        CheckingKeyText.Text = "> Valid Key"
-        wait(1)
+	if TextBox.Text == Key then
+		CheckingKeyText.Visible = true
+		CheckingKeyText.Text = "> Checking Key.. 1/3"
+		wait(1)
+		CheckingKeyText.Text = "> Checking Key.. 2/3"
+		wait(1)
+		CheckingKeyText.Text = "> Checking Key.. 3/3"
+		wait(1)
+		CheckingKeyText.Text = "> Valid Key"
+		wait(1)
 
-        if CheckingKeyText.Text == "> Valid Key" then
-            CheckingGameText.Visible = true
-            CheckingGameText.Text = "> Checking For Script.. 1/3"
-            wait(1)
-            CheckingGameText.Text = "> Checking For Script.. 2/3"
-            wait(1)
-            CheckingGameText.Text = "> Checking For Script.. 3/3"
-            wait(1)
+		-- Destroy the key UI and load the main script
+		DumbHubKeyMenu:Destroy()
 
-            local scriptFound = false
-            for _, v in pairs(GameID) do  
-                if game.PlaceId == v then
-                    scriptFound = true
-                    break
-                end
-            end
 
-            if scriptFound then
-                CheckingGameText.Text = "> Script Found"
-                wait(1)
-                DoneText.Visible = true
-                wait(1)
-                FatalityKeyyLibrary:Destroy()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/WHYSTRIV3/DumbHub/main/UILoadStrings.lua"))()
-            else
-                CheckingGameText.Text = "> Script Not Found"
-            end
-        end
-    else
-        CheckingKeyText.Visible = true
-        CheckingKeyText.Text = "> Invalid Key"
+	else
+		CheckingKeyText.Visible = true
+		CheckingKeyText.Text = "> Invalid Key"
 		wait(3)
-		 CheckingKeyText.Text = ""
-    end
+		CheckingKeyText.Text = ""
+	end
 end)
 
 
@@ -454,7 +414,7 @@ PremiumUICorner.Parent = PremiumKey
 PremiumKey.MouseButton1Click:Connect(function()
 	local hasAccess = false
 
-	for i, v in pairs(ID) do
+	for _, v in pairs(ID) do
 		if game.Players.LocalPlayer.UserId == v then
 			hasAccess = true
 			break
@@ -472,31 +432,9 @@ PremiumKey.MouseButton1Click:Connect(function()
 		CheckingKeyText.Text = "> Access Granted"
 		wait(1)
 
-		CheckingGameText.Visible = true
-		CheckingGameText.Text = " > Checking For Script.. 1/3"
-		wait(1)
-		CheckingGameText.Text = " > Checking For Script.. 2/3"
-		wait(1)
-		CheckingGameText.Text = " > Checking For Script.. 3/3"
-		wait(1)
+		-- Destroy the key UI and load the main script
+		DumbHubKeyMenu:Destroy()
 
-		local scriptFound = false
-		for i, v in pairs(GameID) do
-			if game.PlaceId == v then
-				CheckingGameText.Text = " > Script Found"
-				wait(1)
-				DoneText.Visible = true
-				wait(1)
-				FatalityKeyyLibrary:Destroy()
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/WHYSTRIV3/DumbHub/main/UILoadStrings.lua"))()
-				scriptFound = true
-				break
-			end
-		end
-
-		if not scriptFound then
-			CheckingGameText.Text = " > Script Not Found"
-		end
 	else
 		CheckingKeyText.Visible = true
 		CheckingKeyText.Text = "> You Don't Have Access"
