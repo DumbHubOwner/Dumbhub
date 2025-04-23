@@ -1,7 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
 
 local DumbHubGameLoader = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -429,7 +425,7 @@ SelectedScriptLoadTextButton.MouseButton1Click:Connect(function()
     if currentPlaceId == selectedPlaceId then
         if selectedPlaceId == 81440632616906 then
                  -- Dif To Earths Core
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/WHYSTRIV3/DumbHubLoadStrings/main/DigToEarthsCore.lua"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/DumbHubOwner/UILoadStrings/refs/heads/main/DigToEarthsCore.lua"))()
                 Main:Destroy()
                  
                 -------------------------------------------------------------------------------------------------------------------------------------------------------------
