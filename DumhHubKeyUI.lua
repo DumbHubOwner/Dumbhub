@@ -381,7 +381,7 @@ ConfirmButton.MouseButton1Click:Connect(function()
 
 		-- Destroy the key UI and load the main script
 		DumbHubKeyMenu:Destroy()
-
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DumbHubOwner/Dumbhub/refs/heads/main/DumbHubLibrary.lua"))()
 
 	else
 		CheckingKeyText.Visible = true
@@ -434,7 +434,7 @@ PremiumKey.MouseButton1Click:Connect(function()
 
 		-- Destroy the key UI and load the main script
 		DumbHubKeyMenu:Destroy()
-
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DumbHubOwner/Dumbhub/refs/heads/main/DumbHubLibrary.lua"))()
 	else
 		CheckingKeyText.Visible = true
 		CheckingKeyText.Text = "> You Don't Have Access"
